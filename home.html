@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - My Website</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="main-header">
+    <div class="top-header">
+      <a href="mailto:animalhealthvetclinic2020@gmail.com">
+        <i class="fa-solid fa-envelope"></i> animalhealthvetclinic2020@gmail.com
+      </a>
+      <a href="tel:number">
+        <i class="fa-solid fa-phone"></i> 9849391681
+      </a>
+    </div>
+    <div class="nav-bar">
+      <img src="./image/i.png">
+      <ul>
+        <ol><a href="home">Home</a></ol>
+        <ol>About Us</ol>
+        <ol>Service</ol>
+        <ol>Contact</ol>
+      </ul>
+      <button>Get Appointment</button>
+    </div>
+    <div>
+
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  <footer class="footer">
+    <div class="footer-image">
+      <img src = "image/i.png">
+      <span class="footer-text">Specialty Veterinary Hospital</span>
+    </div>
+
+    <div class="footer-container">
+      <!-- Pages -->
+      <div class="footer-column">
+        <h3>Our Pages<span class="dot"></span></h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="home">Home</a></li>
+        </ul>
+      </div>
+
+      <!-- Policies -->
+      <div class="footer-column">
+        <h3>Policies<span class="dot"></span></h3>
+        <ul>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- About Us -->
+      <div class="footer-column about">
+        <h3>About Us<span class="dot"></span></h3>
+        <p>At Ivy Paws Super Specialty Veterinary Hospital (SSVH), we believe that every pet deserves exceptional care.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ivy Paws SSVH. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!--- Scripts -->
+  <script>
+  window.addEventListener("scroll", () => {
+    const footer = document.querySelector(".footer");
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    if (scrollPosition >= pageHeight - 10) {
+      footer.classList.add("show");
+    } else {
+      footer.classList.remove("show");
+    }
+  });
+</script>
+</body>
+</html>
