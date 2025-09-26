@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - My Website</title>
-  <link rel="stylesheet" href="home.css" />
+  <title>Home - Ivy Paws SSVH</title>
+  <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 </head>
@@ -12,7 +12,6 @@
   <section class="main-header">
     <!-- Top Header -->
     <div class="top-header">
-      <label for="menu-toggle" class="hamburger">&#9776;</label>
       <a href="mailto:animalhealthvetclinic2020@gmail.com">
         <i class="fa-solid fa-envelope"></i> animalhealthvetclinic2020@gmail.com
       </a>
@@ -23,20 +22,27 @@
 
     <!-- Nav Bar -->
     <div class="nav-bar">
+      <img src="image/i.png" alt="Logo">
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
       <div class="nav-left">
         <ul>
-          <img src="image/i.png" alt="Logo">
-          <ol><a href="#">Home</a></ol>
-          <ol><a href="#">About Us</a></ol>
-          <ol><a href="#">Service</a></ol>
-          <ol><a href="#">Contact</a></ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
-        <button onclick="">Get Appointment</button>
+        <button><span>Get Appointment</span></button>
       </div>
     </div>
+
+    <!-- Slideshow Images -->
+    <img src="image/bg1.png" class="slideshow-img active" alt="Slideshow 1">
+    <img src="image/bg2.png" class="slideshow-img" alt="Slideshow 2">
+    <img src="image/bg3.png" class="slideshow-img" alt="Slideshow 3">
+    <img src="image/bg4.png" class="slideshow-img" alt="Slideshow 4">
   </section>
-  
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-image">
@@ -45,29 +51,26 @@
     </div>
 
     <div class="footer-container">
-      <!-- Pages -->
       <div class="footer-column">
-        <h3>Our Pages<span class="dot"></span></h3>
+        <h3>Our Pages</h3>
         <ul>
           <li><a href="#">About Us</a></li>
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">Services</a></li>
-          <li><a href="index">Home</a></li>
+          <li><a href="#">Home</a></li>
         </ul>
       </div>
 
-      <!-- Policies -->
       <div class="footer-column">
-        <h3>Policies<span class="dot"></span></h3>
+        <h3>Policies</h3>
         <ul>
           <li><a href="#">Terms & Conditions</a></li>
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
 
-      <!-- About Us -->
       <div class="footer-column about">
-        <h3>About Us<span class="dot"></span></h3>
+        <h3>About Us</h3>
         <p>At Ivy Paws Super Specialty Veterinary Hospital (SSVH), we believe that every pet deserves exceptional care.</p>
         <a href="#" class="read-more">Read More</a>
       </div>
@@ -85,19 +88,39 @@
     </div>
   </footer>
 
-  <!-- Footer Scroll Script -->
+  <!-- Scripts -->
   <script>
-  window.addEventListener("scroll", () => {
-    const footer = document.querySelector(".footer");
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const pageHeight = document.documentElement.scrollHeight;
+    // Slideshow
+    const slides = document.querySelectorAll(".slideshow-img");
+    let current = 0;
 
-    if (scrollPosition >= pageHeight - 10) {
-      footer.classList.add("show");
-    } else {
-      footer.classList.remove("show");
-    }
-  });
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 5000);
+  </script>
+
+  <script>
+    // Footer show on scroll
+    window.addEventListener("scroll", () => {
+      const footer = document.querySelector(".footer");
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      if (scrollPosition >= pageHeight - 10) {
+        footer.classList.add("show");
+      } else {
+        footer.classList.remove("show");
+      }
+    });
+    const hamburger = document.querySelector(".hamburger");
+    const navLeft = document.querySelector(".nav-left");
+    const navBar = document.querySelector(".nav-bar");
+    hamburger.addEventListener("click", () => {
+      navBar.classList.toggle("menu-open");
+      navLeft.classList.toggle("active");
+    });
   </script>
 </body>
 </html>
